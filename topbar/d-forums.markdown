@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Legacy Guides
+title: Forums
 permalink: /forums/
 ---
 
