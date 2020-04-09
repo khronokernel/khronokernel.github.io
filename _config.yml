@@ -18,12 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Slav's Emporium
+title: Dortania
 description: >- # this means to ignore newlines until "baseurl:"
-  Trash site for a trash slav
+  Homepage for Dortania Guides
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  khronokernel
+github_username:  Dortania
 
 # Build settings
 theme: minima

@@ -1,16 +1,51 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Getting Started
+permalink: /guides/
 ---
 
-Hello, welcome to my site! My name is Mykola but I go by many names, Hackintosh Slav, boomer, u/dracoflar, immigrant, Khronokernel but my friends just call me slav. This site is mainly used to keep my thoughts and my guides in so people can easily find them without much hassle
+Welcome to the Dortania home page. This site will serve as a starting place for your macOS journey.
 
-Regarding myself, I've been doing hacks since 2013. With my step dad introducing me to the world of both Macintoshes and Hackintoshes, starting with Chameleon then later Clover and now we are here: The dawn of OpenCore! I'm also a moderator on the r/hackintosh subreddit where post once a month, but my time is mostly spent now writing and maintaining my Hackintosh guides
+# Hardware Support
 
-Need to get in touch with me? Couple ways:
+Before you can get started on your journey, you're gonna need to check *if* you can even run macOS and what may stand in your way:
 
-* Email: khronokernel@icloud.com
-   * Please don't ask me to make you a hackintosh
-* Discord: Hackintosh Slav on the [r/hackintosh Discord](https://discord.gg/Wxam8aH)
-   * Again, please don't ask me to make you a hackintosh. I will bean you
+* [GPU Buyers Guide](https://gpu.dortania.ml/)
+   * Check if your GPU is support and what version of macOS you can run
+* [Wireless Buyers Guide](https://wifi.dortania.ml/)
+  * Check if your Wifi card is supported
+* [Anti-Hardware Buyers Guide](https://hardware.dortania.ml/)
+  * Overall guide on what to avoid and what pitfalls your hardware may hit
+
+# Installation Guides
+
+Now that you know your hardware is supported, it's time to to finally setup your hackintosh, we have 2 main guides currently avalible to help you on this journey
+
+* [OpenCore Desktop Guide](https://desktop.dortania.ml/)
+  * The main OpenCore guide
+* [OpenCore Laptop Guide](https://1revenger1.gitbook.io/laptop-guide/)
+  * Companion guide for those installing with laptops
+
+# Extras 
+
+* [WhateverGreen's Framebuffer Patching](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md)
+  * Deep dive into how to setup your iGPU
+* [OpenCore's Official Configuration PDF](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
+  * For those who want to go deeper into OpenCore
+
+# Legacy Guides (Clover)
+
+Legacy guides no longer being maintained
+
+* [CorpNewt's Vanilla Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/)
+* [midi1996's Internet Install Guide](https://midi1996.github.io/hackintosh-internet-install-gitbook/)
+
+# Communities and Forums
+
+* [r/hackintosh](https://www.reddit.com/r/hackintosh/)
+   * Subreddit for all things hackintosh
+* [Official r/hackintosh Discord](https://discord.gg/Wxam8aH)
+   * A discord for all things hackintosh
+   * Mainly specializing in Intel hardware
+* [AMD-OSX's Discord](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+   * Discord specializing in AMD hardware
