@@ -32,20 +32,3 @@ Now that you know your hardware is supported, it's time to to finally setup your
   * Deep dive into how to setup your iGPU
 * [OpenCore's Official Configuration PDF](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
   * For those who want to go deeper into OpenCore
-
-# Legacy Guides (Clover)
-
-Legacy guides no longer being maintained
-
-* [CorpNewt's Vanilla Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/)
-* [midi1996's Internet Install Guide](https://midi1996.github.io/hackintosh-internet-install-gitbook/)
-
-# Communities and Forums
-
-* [r/hackintosh](https://www.reddit.com/r/hackintosh/)
-   * Subreddit for all things hackintosh
-* [Official r/hackintosh Discord](https://discord.gg/Wxam8aH)
-   * A discord for all things hackintosh
-   * Mainly specializing in Intel hardware
-* [AMD-OSX's Discord](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-   * Discord specializing in AMD hardware
