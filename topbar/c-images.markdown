@@ -10,10 +10,6 @@ Discord:
 
 ![](https://i.imgur.com/numOUnF.png)
 
-Imgur:
-
-![](https://i.imgur.com/Bz5tswi.jpg)
-
 Local:
 
 ![](/images/test-image.png)
