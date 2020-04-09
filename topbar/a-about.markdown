@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Getting Started
-permalink: /guides/
+permalink: /about/
 ---
 
 Welcome to the Dortania home page. This site will serve as a starting place for your macOS journey.
