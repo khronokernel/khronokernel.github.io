@@ -1,15 +1,9 @@
-title: "Dortania"
-description: >- # this means to ignore newlines until "baseurl:"
-  Note: Dortania is not affiliated with Frito-Lay or PepsiCo. All product names, trademarks and registered trademarks are property of their respective owners.
+title: "Mykola's blog"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: dortania
+github_username: khronokernel
 theme: minima
 header_pages:
   - topbar/a-about.markdown
-  - topbar/b-troubleshooting.markdown
-  - topbar/d-forums.markdown
-  - docs/README.md
-  - topbar/e-builds.markdown
 plugins:
   - jekyll-feed
