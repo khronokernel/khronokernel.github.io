@@ -4,6 +4,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: khronokernel
 theme: minima
 header_pages:
-  - topbar/a-about.markdown
+  - topbar/a-aboutme.markdown
 plugins:
   - jekyll-feed
