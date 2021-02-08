@@ -5,7 +5,7 @@ github_username: khronokernel
 theme: minima
 header_pages:
   - topbar/aboutme.markdown
-  - topbar/design.markdown
+  - topbar/portfolio.markdown
   - topbar/contact.markdown
 plugins:
   - jekyll-feed
