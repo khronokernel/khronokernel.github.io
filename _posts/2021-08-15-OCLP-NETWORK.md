@@ -5,11 +5,11 @@ date:   2021-08-15 7:00:00 -0600
 categories: macOS
 ---
 
-In this multi-part blog post, I'll be discussing my research on running unsupported Macs in macOS Big Sur through OpenCore Legacy Patcher. Today we'll be going over all the trials and tribulation of **fixing networking support in macOS Big Sur!**
+In this multi-part blog post, I'll be discussing my research on running unsupported Macs in newer macOS versions through OpenCore Legacy Patcher. Today we'll be going over all the trials and tribulation of **fixing networking support in macOS Big Sur!**
 
 ### Quick Summary
 
-For those unfamiliar with my work, I, Mykola Grymalyuk, am the co-author of [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) alongside my good friend, the brilliant [Dhinak. G](https://github.com/dhinakg). Our goal with this project is to allow for a near-native experience of unsupported Macs on newer OSes through the power of in-memory patching with [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) and [Lilu](https://github.com/acidanthera/Lilu).
+For those unfamiliar with my work, I am the co-author of [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) alongside my good friend, the brilliant [Dhinak. G](https://github.com/dhinakg). Our goal with this project is to allow for a near-native experience of unsupported Macs on newer OSes through the power of in-memory patching with [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) and [Lilu](https://github.com/acidanthera/Lilu).
 
 ### Table of Contents
 
