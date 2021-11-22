@@ -79,7 +79,6 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 
 | OEM          | Model                             | Power | Ethernet Controller | Connection | Notes                                          |
 | :----------- | :-------------------------------- | :---- | :------------------ | :--------- | :--------------------------------------------- |
-| Belkin       | Thunderbolt 3 Express Dock HD     | 85w   | Realtek RTL8153     | USB        |                                                |
 | Belkin       | Thunderbolt 3 Dock Pro            | 85w   | Realtek RTL8153     | USB        |                                                |
 | CalDigit     | USB-C Pro Dock                    | 85w   | Realtek RTL8153     | USB        |                                                |
 | ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Realtek RTL8153     | USB        | DisplayPort MST, no multi-monitor in macOS     |
@@ -91,6 +90,7 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 | Plugable     | Thunderbolt 3 USB-C Dual Display  | 96w   | Realtek RTL8153     | USB        |                                                |
 | HP           | Thunderbolt Dock 120W G2          | 120w? | Realtek RTL8153     | USB        |                                                |
 | Razer        | Thunderbolt 4 Dock Chroma         | 90w   | Realtek RTL8153     | USB        |                                                |
+| Corsair      | TBT100 Thunderbolt 3 Dock         | 85w   | Realtek RTL8153     | USB        |                                                |
 | Seagate      | Firecuda Gaming Dock              | N/A   | Realtek RTL8153     | USB        |                                                |
 | WAVLINK      | Thunderdock SE/Thunderdock SE III | N/A   | Asix AX88179        | USB        | Requires 3rd party drivers in macOS            |
 
@@ -100,6 +100,7 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 | :----------- | :-------------------------------- | :---- | :------------------ | :--------- | :--------------------------------------------- |
 | Apple        | Thunderbolt Display               | N/A   | Broadcom BCM57761   | PCIe       |                                                |
 | Apple        | Thunderbolt 1 to Ethernet adapter | N/A   | Broadcom BCM57762   | PCIe       | Same NIC as 2020 M1 iMac                       |
+| Belkin       | Thunderbolt 3 Express Dock HD     | 85w   | Intel i210          | PCIe       |                                                |
 | Plugable     | Thunderbolt 3 Dock + 60W          | 60w   | Intel i210          | PCIe       |                                                |
 | i-tec        | Thunderbolt 3 Dual 4K Dock + 60w  | 60w   | Intel i210          | PCIe       |                                                |
 | CableMatters | Thunderbolt 3 Dock + 60w          | 60w   | Intel i210          | PCIe       |                                                |
