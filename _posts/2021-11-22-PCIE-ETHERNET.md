@@ -31,6 +31,19 @@ Additionally PCIe NICs generally offload much of the compute task from the CPU o
 * Note 1: Not all USB Ethernet devices are supported in macOS (namely AX88179) however the vast majority are thanks to this generic driver struture.
 * Note 2: Apple may sometimes have additional support for certain USB Ethernet controllers via add-on drivers such as AppleUSBRealtek8153Patcher.kext
 
+Finally the most noticable issue with USB NICs is that they share bandwidth with the rest of your USB devices on the same controller. USB 3.0 for example has a shared bandwidth of 5Gbps, and when you have a dock with multiple devices plugged in, that takes up precious resources:
+
+| Device | Bandwidth | Notes |
+| :--- | :--- | :--- |
+| USB to SATA HDD	| 3Gbps	| Lower end HDD (SATA 2 speeds) |
+| USB to SATA SSD	| 5Gbps	| SATA 3 SSD (capped at USB 3.0) |
+| USB Ethernet NIC	| 1Gbps	| Standard 1Gbe |
+| USB Capture Card  | 5Gbps | |
+| TOTAL	| 14Gbps	| |
+
+As you can see, devices will be strained for bandwidth as we're exceeding the 5Gbps bandwidth allowed under USB 3.0. Removing devices from this chain can greatly alliviate contrains, allowing your NIC to run without comprimise as well as allowing other USB devices to run faster.
+
+
 ## PCIe Driver Support
 
 Currently in macOS Big Sur/Monterey, there are 3 PCIe Ethernet Vendors natively supported. Besides the Intel8254X driver, all other drivers in macOS natively support both Intel and Apple Silicon machines:
@@ -92,7 +105,9 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 | Razer        | Thunderbolt 4 Dock Chroma         | 90w   | Realtek RTL8153     | USB        |                                                |
 | Corsair      | TBT100 Thunderbolt 3 Dock         | 85w   | Realtek RTL8153     | USB        |                                                |
 | Seagate      | Firecuda Gaming Dock              | N/A   | Realtek RTL8153     | USB        |                                                |
+| Mantiz       | Saturn Pro                        | 97w   | Realtek RTL8153     | USB        |                                                |
 | WAVLINK      | Thunderdock SE/Thunderdock SE III | N/A   | Asix AX88179        | USB        | Requires 3rd party drivers in macOS            |
+| Razer        | Core X Chroma                     | 100w  | Asix AX88179        | USB        | Requires 3rd party drivers in macOS            |
 
 ### PCIe
 
