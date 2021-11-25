@@ -11,6 +11,9 @@ So with the purchase of a 14" MacBook Pro, I've been in the market to buy a Thun
 * [PCIe Driver Support](#pcie-driver-support)
 * [Model Notes](#model-notes)
 * [Dock Recommendations](#dock-recommendations)
+  * [Best Bang for Buck](#best-bang-for-buck)
+  * [Best Overall](#best-overall)
+  * [Best for eGPU](#best-for-egpu)
 * [Thunderbolt Ethernet Table](#thunderbolt-ethernet-table)
   * [USB](#usb)
   * [PCIe](#pcie)
@@ -76,6 +79,21 @@ However as of Big Sur/Monterey no native Macs use Intel. Additionally Apple main
 
 ## Dock Recommendations
 
+### Best Bang for Buck
+
+The best bang for buck for the majority of users would be the Belkin Thunderbolt 3 Express Dock HD soley for the reason of being insanely cheap on eBay while still including essential features:
+
+* Fresco Logic USB 3.0 Controller
+* Intel i210 PCIe Ethernet Controller
+* 85w USB-PD Charging
+* Single DisplayPort 1.2
+* Thunderbolt 3 passthrough
+  * can be used as additional DisplayPort output
+
+It's a very bare bones dock, but if all you need is some USB ports, PCIe Ethernet and DisplaPort, this dock is a great value! Ensure you look on used markets such as eBay to get better pricing, as these docks usually sit under $100 CAD without PSUs or just over with them.
+
+### Best Overall
+
 From my research, I've found that the best dock overall in the field seems to be CalDigit's TS3 Plus dock. The main reasons why:
 
 * Includes 3 dedicated USB Controllers
@@ -83,8 +101,22 @@ From my research, I've found that the best dock overall in the field seems to be
   * Single AsMedia USB 3.1 Controller (for rear 10Gbps USB-C)
 * Intel i210 PCIe Ethernet Controller
 * 87w USB-PD Charging
+* Single DisplayPort 1.2
+* Thunderbolt 3 passthrough
+  * can be used as additional DisplayPort output
+* SD 4.0 and UHS-II reader
+* Optical Audio
 
-While the dock may be a bit older, it's overall one of the best on the market for users wanting a minimal comprimise dock for their system. 
+If price is no issue, the TS3 Plus surpasses every dock out there currently. However due to how long this product's been out, a TS4 Plus is sure to be on the horizon.
+
+### Best for eGPU
+
+If you're an eGPU user, you've really only got 2 realistic options:
+
+* TUL mini eGFX prototype
+* Visiontek Expansion Chassis TB3 Mini eGFX
+
+Both of these enclosures include an Intel i210 PCIe Ethernet Controller while still giving you the flexibility of a PCIe slot for eGPUs. However due to the 15w charging, you will need to supply the laptop with an additional cable.
 
 ## Thunderbolt Ethernet Table
 
@@ -106,6 +138,7 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 | Corsair      | TBT100 Thunderbolt 3 Dock         | 85w   | Realtek RTL8153     | USB        |                                                |
 | Seagate      | Firecuda Gaming Dock              | N/A   | Realtek RTL8153     | USB        |                                                |
 | Mantiz       | Saturn Pro                        | 97w   | Realtek RTL8153     | USB        |                                                |
+| HP           | Omen Accelerator                  | 60w   | Realtek RTL8153     | USB        |                                                |
 | WAVLINK      | Thunderdock SE/Thunderdock SE III | N/A   | Asix AX88179        | USB        | Requires 3rd party drivers in macOS            |
 | Razer        | Core X Chroma                     | 100w  | Asix AX88179        | USB        | Requires 3rd party drivers in macOS            |
 
@@ -124,6 +157,8 @@ While the dock may be a bit older, it's overall one of the best on the market fo
 | StarTech     | Thunderbolt 3 Dock - Dual 4K 60Hz | 85w   | Intel i210          | PCIe       |                                                |
 | CalDigit     | TS3 Plus                          | 87w   | Intel i210          | PCIe       |                                                |
 | Sonnet       | Echo 11 Thunderbolt 3             | 87w   | Intel i210          | PCIe       |                                                |
+| TUL          | mini eGFX prototype               | 15w   | Intel i210          | PCIe       |                                                |
+| Visiontek    | Expansion Chassis TB3 Mini eGFX   | 15w   | Intel i210          | PCIe       |                                                |
 | Goodway      | DBD1330                           | 96w   | Intel i225          | PCIe       | 2.5Gbe, must buy in bulk                       |
 | ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Intel i225          | PCIe       | 2.5Gbe, not offically available. DisplayPort MST |
 | OWC          | Thunderbolt 3 Pro Dock            | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
