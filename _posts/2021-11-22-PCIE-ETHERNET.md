@@ -157,6 +157,9 @@ Both of these enclosures include an Intel i210 PCIe Ethernet Controller while st
 | StarTech     | Thunderbolt 3 Dock - Dual 4K 60Hz | 85w   | Intel i210          | PCIe       |                                                |
 | CalDigit     | TS3 Plus                          | 87w   | Intel i210          | PCIe       |                                                |
 | Sonnet       | Echo 11 Thunderbolt 3             | 87w   | Intel i210          | PCIe       |                                                |
+| OWC          | Thunderbolt 3 Dock (14 port)      | 85w   | Intel i210          | PCIe       |                                                |
+| Targus       | Thunderbolt 3 DOCK220             | 85w   | Intel i210          | PCIe       |                                                |
+| Mantiz       | Titan Thunderbolt 3 dock          | 85w   | Intel i210          | PCIe       |                                                |
 | TUL          | mini eGFX prototype               | 15w   | Intel i210          | PCIe       |                                                |
 | Visiontek    | Expansion Chassis TB3 Mini eGFX   | 15w   | Intel i210          | PCIe       |                                                |
 | Goodway      | DBD1330                           | 96w   | Intel i225          | PCIe       | 2.5Gbe, must buy in bulk                       |
