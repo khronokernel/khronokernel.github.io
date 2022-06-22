@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "macOS Ventura and new dyld shared cache system"
+title: "macOS Ventura and the new dyld shared cache system"
 date: 2022-06-22 7:00:00 -0600
 categories: macOS
 ---
 
 With the unveiling of macOS Ventura a few weeks ago, Apple did a full clean house on their root volume to try and remove as much bloat in their OS as possible.
 
-Some of these techniques included removing on-disk kernel extensions, as well as adding more architectural-specific differences with Apple Silicon and Intel Macs.
+Some of these techniques included removing on-disk kernel extensions, as well as adding more architectural-specific differences between Apple Silicon and Intel Macs.
 
 One of these changes was moving the dyld shared cache off the root volume and inside the Preboot volume. This allows for Apple to no longer ship 3 different dyld shared caches, saving the user precious disk space.
 
@@ -53,7 +53,7 @@ At the time of writing, most of Apple's kernel space does not explicitly use Has
 
 However, if we ignore this limitation, we can actually use the Apple Silicon shared cache, and even boot it on Intel with some tinkering.
 
-Discovered originally by ASentientBot, we can skip the OS.dmg verification by forcing `_authenticate_root_hash` inside of APFS.kext to return 0. Once this is patched, we can use whatever OS.dmg we'd like!
+Discovered originally by [ASentientBot](https://github.com/ASentientBot), we can skip the OS.dmg verification by forcing `_authenticate_root_hash` inside of APFS.kext to return 0. Once this is patched, we can use whatever OS.dmg we'd like!
 
 Some more info on how to extract and install the Apple Silicon cache is documented on the OpenCore Legacy Patcher repository:
 
