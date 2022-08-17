@@ -49,17 +49,25 @@ As you can see, devices will be strained for bandwidth as we're exceeding the 5G
 
 ## PCIe Driver Support
 
-Currently in macOS Big Sur/Monterey, there are 3 PCIe Ethernet Vendors natively supported. Besides the Intel8254X driver, all other drivers in macOS natively support both Intel and Apple Silicon machines:
+Currently in macOS Ventura, there are 3 PCIe Ethernet Vendors natively supported. All drivers in macOS natively support both Intel and Apple Silicon machines:
 
 * Drivers can be found under `/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/`
 
 | Vendor   | Driver                           | Supported Architectures | Hardware                              |
 | :-----   | :------------------------------- | :---------------------- | :------------------------------------ |
-| Intel    | AppleIntel8254XEthernet.kext     | x86_64                  | 80003ES2LAN, 82545EM, 82571EB/82571GB |
 | Intel    | AppleIntelI210Ethernet.kext      | x86_64, arm64e          | i210, i225                            |
-| Intel    | Intel82574L.kext                 | x86_64, arm64e          | 82574L, 82566DC                       |
 | Broadcom | AppleBCM5701Ethernet.kext        | x86_64, arm64e          | 5764M, 57761, 57762, 57765, 57766     |
 | Aquantia | AppleEthernetAquantiaAqtion.kext | x86_64, arm64e          | AQC107, AQC113                        |
+
+### Ventura Warning
+
+With macOS Ventura, Apple removed support for the AppleIntel8254XEthernet and Intel82574L-based devices. You can try to re-add support by installing the older extension, however we'd recommend users avoid these NICs if possible. These Ethernet Controllers are natively supported in Monterey and older:
+
+| Vendor   | Driver                           | Supported Architectures | Hardware                              |
+| :-----   | :------------------------------- | :---------------------- | :------------------------------------ |
+| Intel    | AppleIntel8254XEthernet.kext     | x86_64                  | 80003ES2LAN, 82545EM, 82571EB/82571GB |
+| Intel    | Intel82574L.kext                 | x86_64, arm64e          | 82574L, 82566DC                       |
+
 
 ## Model Notes
 
@@ -75,7 +83,7 @@ Apple previously used Intel with their 2006-2012 Mac Pro's:
 * MacPro1,1-3,1 (2006-8): 8254X
 * MacPro4,1-5,1 (2009-12): 82574L
 
-However as of Big Sur/Monterey no native Macs use Intel. Additionally Apple maintains the i210 kexts solely for Thunderbolt docks, and i225 support was added into AppleIntelI210Ethernet.kext with macOS Catalina.
+However as of Ventura, Apple has removed these drivers. Additionally Apple maintains the i210 kexts solely for Thunderbolt docks, and i225 support was added into AppleIntelI210Ethernet.kext with macOS Catalina.
 
 ## Dock Recommendations
 
@@ -84,7 +92,7 @@ However as of Big Sur/Monterey no native Macs use Intel. Additionally Apple main
 The best bang for buck for the majority of users would be the Belkin Thunderbolt 3 Express Dock HD soley for the reason of being insanely cheap on eBay while still including essential features:
 
 * Fresco Logic USB 3.0 Controller
-* Intel i210 PCIe Ethernet Controller
+* Intel i210 PCIe Ethernet Controller (1Gbe)
 * 85w USB-PD Charging
 * Single DisplayPort 1.2
 * Thunderbolt 3 passthrough
@@ -94,20 +102,18 @@ It's a very bare bones dock, but if all you need is some USB ports, PCIe Etherne
 
 ### Best Overall
 
-From my research, I've found that the best dock overall in the field seems to be CalDigit's TS3 Plus dock. The main reasons why:
+From my research, I've found that the best dock overall in the field seems to be CalDigit's TS4 dock. The main reasons why:
 
-* Includes 3 dedicated USB Controllers
-  * Dual Fresco Logic USB 3.0 Controllers (one for rear and front)
-  * Single AsMedia USB 3.1 Controller (for rear 10Gbps USB-C)
-* Intel i210 PCIe Ethernet Controller
-* 87w USB-PD Charging
-* Single DisplayPort 1.2
-* Thunderbolt 3 passthrough
+* Includes 2 dedicated USB Controllers
+  * Dual Fresco Logic USB 3.2 Controllers
+* Intel i225 PCIe Ethernet Controller (2.5Gbe)
+* 98w USB-PD Charging
+* Single DisplayPort 1.4
+* Dual Thunderbolt 4 passthrough
   * can be used as additional DisplayPort output
 * SD 4.0 and UHS-II reader
-* Optical Audio
 
-If price is no issue, the TS3 Plus surpasses every dock out there currently. However due to how long this product's been out, a TS4 Plus is sure to be on the horizon.
+If price is no issue, the TS4 surpasses every dock out there currently
 
 ### Best for eGPU
 
@@ -155,13 +161,14 @@ Both of these enclosures include an Intel i210 PCIe Ethernet Controller while st
 | StarTech     | Thunderbolt 3 Dual-4K             | 15w?  | Intel i210          | PCIe       |                                                |
 | StarTech     | Dual 4K Mini Thunderbolt 3 Dock   | N/A   | Intel i210          | PCIe       |                                                |
 | StarTech     | Thunderbolt 3 Dock - Dual 4K 60Hz | 85w   | Intel i210          | PCIe       |                                                |
-| CalDigit     | TS3 Plus                          | 87w   | Intel i210          | PCIe       |                                                |
 | Sonnet       | Echo 11 Thunderbolt 3             | 87w   | Intel i210          | PCIe       |                                                |
 | OWC          | Thunderbolt 3 Dock (14 port)      | 85w   | Intel i210          | PCIe       |                                                |
 | Targus       | Thunderbolt 3 DOCK220             | 85w   | Intel i210          | PCIe       |                                                |
 | Mantiz       | Titan Thunderbolt 3 dock          | 85w   | Intel i210          | PCIe       |                                                |
 | TUL          | mini eGFX prototype               | 15w   | Intel i210          | PCIe       |                                                |
 | Visiontek    | Expansion Chassis TB3 Mini eGFX   | 15w   | Intel i210          | PCIe       |                                                |
+| CalDigit     | TS3 Plus                          | 87w   | Intel i210          | PCIe       |                                                |
+| CalDigit     | TS4                               | 98w   | Intel i225          | PCIe       | 2.5Gbe                                         |
 | Goodway      | DBD1330                           | 96w   | Intel i225          | PCIe       | 2.5Gbe, must buy in bulk                       |
 | ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Intel i225          | PCIe       | 2.5Gbe, not offically available. DisplayPort MST |
 | OWC          | Thunderbolt 3 Pro Dock            | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
