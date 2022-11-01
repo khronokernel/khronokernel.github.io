@@ -5,7 +5,7 @@ date: 2022-08-01 7:00:00 -0600
 categories: macOS
 ---
 
-With the release of macOS Ventura, Apple dropped all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. Today's post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
+With the release of macOS Ventura, Apple dropped all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
 
 ----------
 
@@ -100,3 +100,5 @@ While not confirmed, we believe the following about the compilers variants:
 # Where do we go from here?
 
 Now that we understand the situation we've been in before, the next blog post will discuss the situation Apple threw us into with macOS Ventura and the challenges faced in restoring support for our older machines.
+
+* [macOS Ventura and legacy Metal: Part 2; New challenges with Ventura](/_posts/2022-11-01-LEGACY-METAL-PART-1.md)
