@@ -29,6 +29,8 @@ With the very first developer beta of macOS Big Sur, we see that Apple's moved a
 
 * Note: In macOS Monterey, Apple split the massive `dyld_shared_cache` into multiple parts to save on OS Update sizes.
 
+![](../images/posts/2022-11-01-LEGACY-METAL/DYLD-Monterey.png)
+
 Because of this shift to dyld usage, we no longer have framework binaries that we can use to downgrade in the future.
 
 Up until after [11.0 Beta 6 (20A5364e)](https://archive.org/details/install-assistant-11.0-dp-6), Apple hadn't merged the majority of the graphics stack into the dyld just yet. Thus we're able to extract some binaries from this OS build, namely:
@@ -91,7 +93,7 @@ While not confirmed, we believe the following about the compilers variants:
   * Metal 1.x and 2.0
   * Introduced with macOS High Sierra (previously known as just MTLCompiler)
   * Removed with macOS Ventura
-* 3809: 
+* 3902: 
   * Metal 2.1 (2.2 included with Catalina)
   * Introduced with macOS Mojave
   * Merged into 31001 with Monterey
