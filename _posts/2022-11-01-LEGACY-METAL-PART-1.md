@@ -5,7 +5,7 @@ date: 2022-11-01 7:00:00 -0600
 categories: macOS
 ---
 
-With the release of macOS Ventura, Apple dropped a number of Macs, and long with it hardware support. One of the major areas we see this is with Ventura's Graphics Stack, specifically relating to the [Metal Graphics API](https://developer.apple.com/metal/). Graphics hardware that was dropped include all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). 
+With the release of macOS Ventura, Apple dropped a number of Macs, and along with it hardware support. One of the major areas we see this with is with Ventura's Graphics Stack, specifically relating to the [Metal Graphics API](https://developer.apple.com/metal/). Graphics hardware that was dropped include all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). 
 
 In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
 
@@ -29,9 +29,11 @@ With the very first developer beta of macOS Big Sur, we see that Apple's moved a
 
 * Note: In macOS Monterey, Apple split the massive `dyld_shared_cache` into multiple parts to save on OS Update sizes.
 
-![](../images/posts/2022-11-01-LEGACY-METAL/DYLD-Monterey.png)
+![](/images/posts/2022-11-01-LEGACY-METAL/DYLD-Monterey.png)
 
 Because of this shift to dyld usage, we no longer have framework binaries that we can use to downgrade in the future.
+
+---------
 
 Up until after [11.0 Beta 6 (20A5364e)](https://archive.org/details/install-assistant-11.0-dp-6), Apple hadn't merged the majority of the graphics stack into the dyld just yet. Thus we're able to extract some binaries from this OS build, namely:
 
