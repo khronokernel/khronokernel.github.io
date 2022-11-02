@@ -5,7 +5,9 @@ date: 2022-08-01 7:00:00 -0600
 categories: macOS
 ---
 
-With part 2 of this blog post, we'll be going over the challenges introduced with macOS Ventura and unsupported Metal GPUs. If you haven't read part 1, check it here: [macOS Ventura and legacy Metal: Part 1; Catching up on the past](/_posts/2022-11-01-LEGACY-METAL-PART-1.md)
+With part 2 of this blog post, we'll be going over the challenges introduced with macOS Ventura and unsupported Metal GPUs. If you haven't read part 1, you can find it here: [macOS Ventura and legacy Metal: Part 1; Catching up on the past](/_posts/2022-11-01-LEGACY-METAL-PART-1.md)
+
+----------
 
 * [Back to the present: Ventura and legacy Metal](#back-to-the-present-ventura-and-legacy-metal)
   * [Dropped GPUs](#dropped-gpus)
@@ -55,7 +57,7 @@ In addition to this, Apple has deprecated the `MTLGPUFamilyMac1` class from MTLG
 
 Now that we know some challenges ahead of us, we can start working on developing patches for Ventura. 
 
-The main hurdles we need to overtake:
+The main hurdles we need to overcome:
 
 * [Extracting 3802 Compilers](#extracting-3802-compilers)
 * [Resolving Compiler Calls](#resolving-compiler-calls)
@@ -123,9 +125,10 @@ Let's rewrite this function into something easier to read:
 
 ```c++
 int CompilerPluginInterface(int BUILD_VERSION) {
-	char compiler_plugin_path[] = "";
+   
+   char compiler_plugin_path[] = "";
 
-	// Determine the path to the compiler plugin
+   // Determine the path to the compiler plugin
     if (BUILD_VERSION == 31001) {
         compiler_plugin_path = "/System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/31001/MTLCompiler";
     } else if (BUILD_VERSION == 3802) {
@@ -136,13 +139,13 @@ int CompilerPluginInterface(int BUILD_VERSION) {
     void *handle = dlopen(compiler_plugin_path, RTLD_LAZY);
     if (handle) {
         // Starts compiling
-	} else {
-		// Error Logging
-	}
+   } else {
+      // Error Logging
+   }
 }
 ```
 
-And with macOS Ventura, MTLCompilerInterface no longer checks for the 3802 path. Thus to support Metal 1 GPUs, we'll want to downgrade the MTLCompilerService.xpc service.
+From the above, we see that MTLCompilerInterface no longer checks for the 3802 path in Ventura. Thus to support Metal 1 GPUs, we'll want to downgrade the MTLCompilerService.xpc service.
 
 However once downgraded, we'll get Sandboxing errors, thus to resolve this we'll add a generic Sandbox profile:
 
@@ -179,8 +182,8 @@ While developing Ventura support for OpenCore Legacy Patcher, we found some addi
 
 * Intel Broadwell is labeled as Metal 1, yet is a 31001 GPU
   * Thus is treated as Metal 2, and Metal 1 bugs do not occur
-* AMD Legacy GCN with stock Metal.framework generates corrupted trans image caches
-  * Forcing WindowServer into not storing the rendered files to make sure proper opaque images are always created
+* AMD Legacy GCN with stock Metal.framework generates corrupted translucent image caches
+  * Forcing WindowServer into not caching the rendered files ensures proper opaque images are always created
 * Hardware Encoding/Decoding on Legacy GCN is currently unsupported
   * Unfortunately we're unable to extract functional VADriver and VADriver2 for these GPUs
 * Crashes in Weather, Fontbook, and News Widgets may occur on Intel Ivy Bridge and Haswell iGPUs

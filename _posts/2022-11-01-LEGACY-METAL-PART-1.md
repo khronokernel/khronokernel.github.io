@@ -5,7 +5,9 @@ date: 2022-08-01 7:00:00 -0600
 categories: macOS
 ---
 
-With the release of macOS Ventura, Apple dropped all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
+With the release of macOS Ventura, Apple dropped a number of Macs, and long with it hardware support. One of the major areas we see this is with Ventura's Graphics Stack, specifically relating to the [Metal Graphics API](https://developer.apple.com/metal/). Graphics hardware that was dropped include all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). 
+
+In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
 
 ----------
 
@@ -23,7 +25,7 @@ Before we dive too much into macOS Ventura's situation, we should first discuss 
 
 ## Battle against on-disk binaries
 
-With the very first developer beta of macOS Big Sur, we see that Apple's moved away from on-disk binaries towards a massive binary called the [`dyld_shared_cache`](https://github.com/apple-oss-distributions/dyld/tree/main). This giant binary, located at `/System/Library/dyld`, hosts most of the frameworks binaries in macOS, interlinks them to aid with function calls, and tries to speed up many of the core userspace functions in macOS. This cache additionally strips a lot of the information from binaries, namely important portions used for stand-alone usage.
+With the very first developer beta of macOS Big Sur, we see that Apple's moved away from on-disk binaries towards a massive binary called the [`dyld_shared_cache`](https://github.com/apple-oss-distributions/dyld/tree/main). This giant binary, located at `/System/Library/dyld`, hosts most of the frameworks and many stand alone binaries in macOS, interlinks them to aid with function calls, and tries to speed up many of the core userspace functions in macOS. This cache additionally strips a lot of the information from binaries, namely important portions used for stand-alone usage.
 
 * Note: In macOS Monterey, Apple split the massive `dyld_shared_cache` into multiple parts to save on OS Update sizes.
 
@@ -101,4 +103,4 @@ While not confirmed, we believe the following about the compilers variants:
 
 Now that we understand the situation we've been in before, the next blog post will discuss the situation Apple threw us into with macOS Ventura and the challenges faced in restoring support for our older machines.
 
-* [macOS Ventura and legacy Metal: Part 2; New challenges with Ventura](/_posts/2022-11-01-LEGACY-METAL-PART-1.md)
+* [macOS Ventura and legacy Metal: Part 2; New challenges with Ventura](/_posts/2022-11-01-LEGACY-METAL-PART-2.md)
