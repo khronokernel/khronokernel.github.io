@@ -7,7 +7,7 @@ categories: macOS
 
 With the release of macOS Ventura, Apple dropped a number of Macs, and along with it hardware support. One of the major areas we see this with is with Ventura's Graphics Stack, specifically relating to the [Metal Graphics API](https://developer.apple.com/metal/). Graphics hardware that was dropped include all Metal 1 GPUs (Intel Haswell, Broadwell) as well as some Metal 2 ones (Intel Skylake and AMD GCN 1-3). 
 
-In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the challenges faced in the past with macOS Big Sur and Monterey.
+In this multi-part blog post, we'll talk about the challenges faced trying to restore support for many older Graphics Cards. This post will be focusing primarily on the changes introduced with macOS Big Sur and Monterey.
 
 ----------
 
