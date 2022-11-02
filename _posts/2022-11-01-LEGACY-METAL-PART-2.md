@@ -34,6 +34,19 @@ With Ventura, the following GPUs have been removed:
 
 This is in addition to the previously removed Graphics Architectures being Intel Ivy Bridge and Nvidia Kepler in Monterey. The most important note from this info is that macOS Ventura no longer officially supports any Metal 1 Macs.
 
+Regarding Metal versioning for dropped GPUs:
+
+| Graphics Architecture | Metal Versioning | Compiler Versioning |
+| :--- | :--- | :--- |
+| Intel Ivy Bridge | Metal 1 | 3802 |
+| Intel Haswell | Metal 1 | 3802 |
+| Intel Broadwell | Metal 1 | 31001 |
+| Intel Skylake | Metal 2 | 31001 |
+| Nvidia Kepler | Metal 1 | 3802 |
+| AMD GCN 1 - 3 | Metal 2 | 31001 |
+
+* Keep an eye on Broadwell, this arch is one of the odder units we'll be working with
+
 ## Dropped Compilers
 
 And the area we're most concerned about is the dropped compilers:
