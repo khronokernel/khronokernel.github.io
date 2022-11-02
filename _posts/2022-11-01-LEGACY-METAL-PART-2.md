@@ -5,7 +5,7 @@ date: 2022-11-01 7:00:01 -0600
 categories: macOS
 ---
 
-With part 2 of this blog post, we'll be going over the challenges introduced with macOS Ventura and unsupported Metal GPUs. If you haven't read part 1, you can find it here: [macOS Ventura and legacy Metal: Part 1; Catching up on the past](./LEGACY-METAL-PART-1.md)
+With part 2 of this blog post, we'll be going over the challenges introduced with macOS Ventura and unsupported Metal GPUs. If you haven't read part 1, you can find it here: [macOS Ventura and legacy Metal: Part 1; Catching up on the past](./LEGACY-METAL-PART-1.html)
 
 ----------
 
@@ -67,7 +67,7 @@ The main hurdles we need to overcome:
 
 ## Extracting 3802 Compilers
 
-The first challenge we face is obtaining 3802 Compilers for our Metal 1 GPUs. As we discussed in [Part 1](./LEGACY-METAL-PART-1.md), we don't have access to any semi-modern compilers. Thus we need to find a way to extract them from Apple's `dyld_shared_cache`.
+The first challenge we face is obtaining 3802 Compilers for our Metal 1 GPUs. As we discussed in [Part 1](./LEGACY-METAL-PART-1.html), we don't have access to any semi-modern compilers. Thus we need to find a way to extract them from Apple's `dyld_shared_cache`.
 
 Thanks to the amazing work of [SentientBot](https://github.com/ASentientBot), the [DSCE](https://github.com/moraea/dsce) project was written explicitly in mind for extracting binaries from this cache. Thus with a simple incantation, we can extract any binary we need from the cache:
 

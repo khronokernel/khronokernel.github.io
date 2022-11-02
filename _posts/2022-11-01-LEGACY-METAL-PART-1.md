@@ -107,4 +107,4 @@ While not confirmed, we believe the following about the compilers variants:
 
 Now that we understand the situation we've been in before, the next blog post will discuss the situation Apple threw us into with macOS Ventura and the challenges faced in restoring support for our older machines.
 
-* [macOS Ventura and legacy Metal: Part 2; New challenges with Ventura](./LEGACY-METAL-PART-2.md)
+* [macOS Ventura and legacy Metal: Part 2; New challenges with Ventura](./LEGACY-METAL-PART-2.html)
