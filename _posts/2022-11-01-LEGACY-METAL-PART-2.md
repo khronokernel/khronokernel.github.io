@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "macOS Ventura and legacy Metal: Part 2; New challenges with Ventura"
-date: 2022-08-01 7:00:00 -0600
+date: 2022-11-01 7:00:01 -0600
 categories: macOS
 ---
 
