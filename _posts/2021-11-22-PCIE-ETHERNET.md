@@ -34,7 +34,7 @@ Additionally PCIe NICs generally offload much of the compute task from the CPU o
 * Note 1: Not all USB Ethernet devices are supported in macOS (namely AX88179) however the vast majority are thanks to this generic driver struture.
 * Note 2: Apple may sometimes have additional support for certain USB Ethernet controllers via add-on drivers such as AppleUSBRealtek8153Patcher.kext
 
-Finally the most noticable issue with USB NICs is that they share bandwidth with the rest of your USB devices on the same controller. USB 3.0 for example has a shared bandwidth of 5Gbps, and when you have a dock with multiple devices plugged in, that takes up precious resources:
+Finally the most noticeable issue with USB NICs is that they share bandwidth with the rest of your USB devices on the same controller. USB 3.0 for example has a shared bandwidth of 5Gbps, and when you have a dock with multiple devices plugged in, that takes up precious resources:
 
 | Device | Bandwidth | Notes |
 | :--- | :--- | :--- |
@@ -44,7 +44,7 @@ Finally the most noticable issue with USB NICs is that they share bandwidth with
 | USB Capture Card  | 5Gbps | |
 | TOTAL	| 14Gbps	| |
 
-As you can see, devices will be strained for bandwidth as we're exceeding the 5Gbps bandwidth allowed under USB 3.0. Removing devices from this chain can greatly alliviate contrains, allowing your NIC to run without comprimise as well as allowing other USB devices to run faster.
+As you can see, devices will be strained for bandwidth as we're exceeding the 5Gbps bandwidth allowed under USB 3.0. Removing devices from this chain can greatly alleviate contrains, allowing your NIC to run without compromise as well as allowing other USB devices to run faster.
 
 
 ## PCIe Driver Support
@@ -89,7 +89,7 @@ However as of Ventura, Apple has removed these drivers. Additionally Apple maint
 
 ### Best Bang for Buck
 
-The best bang for buck for the majority of users would be the Belkin Thunderbolt 3 Express Dock HD soley for the reason of being insanely cheap on eBay while still including essential features:
+The best bang for buck for the majority of users would be the Belkin Thunderbolt 3 Express Dock HD solely for the reason of being insanely cheap on eBay while still including essential features:
 
 * Fresco Logic USB 3.0 Controller
 * Intel i210 PCIe Ethernet Controller (1Gbe)
@@ -98,7 +98,7 @@ The best bang for buck for the majority of users would be the Belkin Thunderbolt
 * Thunderbolt 3 passthrough
   * can be used as additional DisplayPort output
 
-It's a very bare bones dock, but if all you need is some USB ports, PCIe Ethernet and DisplaPort, this dock is a great value! Ensure you look on used markets such as eBay to get better pricing, as these docks usually sit under $100 CAD without PSUs or just over with them.
+It's a very bare bones dock, but if all you need is some USB ports, PCIe Ethernet and DisplayPort, this dock is a great value! Ensure you look on used markets such as eBay to get better pricing, as these docks usually sit under $100 CAD without PSUs or just over with them.
 
 ### Best Overall
 
@@ -170,8 +170,12 @@ Both of these enclosures include an Intel i210 PCIe Ethernet Controller while st
 | CalDigit     | TS3 Plus                          | 87w   | Intel i210          | PCIe       |                                                |
 | CalDigit     | TS4                               | 98w   | Intel i225          | PCIe       | 2.5Gbe                                         |
 | Goodway      | DBD1330                           | 96w   | Intel i225          | PCIe       | 2.5Gbe, must buy in bulk                       |
-| ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Intel i225          | PCIe       | 2.5Gbe, not offically available. DisplayPort MST |
+| ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Intel i225          | PCIe       | 2.5Gbe, not officially available. DisplayPort MST |
 | OWC          | Thunderbolt 3 Pro Dock            | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
 | Akitio       | Thunder3 Dock Pro                 | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
 | Sonnet       | Twin 10G SFP+                     | N/A   | Intel X540          | PCIe       | Requires 3rd party drivers for macOS, **no Apple Silicon support** |
 | HP           | Elite Thunderbolt 3 Dock          | 65w   | Broadcom BCM57786   | PCIe       | **Not supported in macOS**                     |
+
+Editor's Note: As pointed out by a reader, Liam, the HP Elite Thunderbolt 3 Dock seems to have another variant with a Broadcom BCM57762-A1 which is natively supported in macOS. If you're able to verify the device before purchase, this may be another great option.
+* Additionally it seems some HP docks are also mislabeled, and can be fixed with a firmware flash: [Fixing Ethernet on the HP Thunderbolt 3 Dock](https://zhongfu.li/posts/2020/01/fix-ethernet-on-hp-tb3-dock/)
+* However other units may [report a BCM57786 chipset](https://h30434.www3.hp.com/t5/Notebook-Software-and-How-To-Questions/Thunderbolt-3-new-dock-station-no-Ethernet-controller-driver/td-p/6906807) which macOS does not support.

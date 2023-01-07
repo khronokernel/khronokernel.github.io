@@ -40,7 +40,7 @@ While the basic idea of simply editing the layouts via AppleALC seems quite simp
 
 We had 2 main issues to resolve. The first was Lilu, the patching core of AppleALC, who didn't want to communicate with our MacBook7,1 test system. After a bit of trial and error, we found the issue to be with the chipset vendor check as only Intel and AMD were supported while the MacBook7,1 was Nvidia. [A quick patch](https://github.com/acidanthera/Lilu/commit/575bd85c759fcec66c02a0ab960b5d8dad095c69) fixed this.
 
-Now our second issue was the most time-consuming. AppleHDA refused to actually process our injected layout data for unknown reasons. We weren't sure exactly why due to lackluster debug information from AppleHDA so I started to experiment with editing the layout IDs. We had 3 main theories as to why this may be:
+Now our second issue was the most time-consuming. AppleHDA refused to actually process our injected layout data for unknown reasons. We weren't sure exactly why due to lacklustre debug information from AppleHDA so I started to experiment with editing the layout IDs. We had 3 main theories as to why this may be:
 
 * AppleHDA's layout ID data structure changed, invalidating old configs
 * AppleHDA had stripped Nvidia codec support
