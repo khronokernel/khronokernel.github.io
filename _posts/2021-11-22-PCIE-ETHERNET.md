@@ -73,7 +73,7 @@ With macOS Ventura, Apple removed support for the AppleIntel8254XEthernet and In
 
 With the above 5 drivers, currently Apple only uses 2 of them in their products:
 
-* Aquatia is used on all Macs with 10Gbe
+* Aquantia is used on all Macs with 10Gbe
   * ie. 2017 iMac Pro, 2019 Mac Pro, 2018 Mac mini
 * Broadcom is used on all 2011+ Macs with 1Gbe
   * ie. 2011-2020 iMacs, 2010-2020 Mac minis, 2013 Mac Pro
