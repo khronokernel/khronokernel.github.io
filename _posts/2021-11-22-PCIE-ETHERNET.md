@@ -59,6 +59,8 @@ Currently in macOS Ventura, there are 3 PCIe Ethernet Vendors natively supported
 | Broadcom | AppleBCM5701Ethernet.kext        | x86_64, arm64e          | 5764M, 57761, 57762, 57765, 57766     |
 | Aquantia | AppleEthernetAquantiaAqtion.kext | x86_64, arm64e          | AQC107, AQC113                        |
 
+* As reported by Raje Punsalan, macOS Ventura adds 10GBe support via DriverKit for many Intel-based NICs. Currently they were able to confirm the X520-DA2 as functional, however this likely implies other NICs such as the X540 should be supported as well. Do proceed with caution however, as Apple may not have added support for all X5xx series NICs.
+
 ### Ventura Warning
 
 With macOS Ventura, Apple removed support for the AppleIntel8254XEthernet and Intel82574L-based devices. You can try to re-add support by installing the older extension, however we'd recommend users avoid these NICs if possible. These Ethernet Controllers are natively supported in Monterey and older:
@@ -173,7 +175,7 @@ Both of these enclosures include an Intel i210 PCIe Ethernet Controller while st
 | ThinkPad     | Universal Thunderbolt 4 Dock      | 100w  | Intel i225          | PCIe       | 2.5Gbe, not officially available. DisplayPort MST |
 | OWC          | Thunderbolt 3 Pro Dock            | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
 | Akitio       | Thunder3 Dock Pro                 | 60w   | Aquantia AQC107     | PCIe       | 10Gbe, same NIC as 2017 iMac Pro/ 2019 Mac Pro |
-| Sonnet       | Twin 10G SFP+                     | N/A   | Intel X540          | PCIe       | Requires 3rd party drivers for macOS, **no Apple Silicon support** |
+| Sonnet       | Twin 10G SFP+                     | N/A   | Intel X540          | PCIe       | Apple Silicon support in Ventura (expected)    |
 | HP           | Elite Thunderbolt 3 Dock          | 65w   | Broadcom BCM57786   | PCIe       | **Not supported in macOS**                     |
 
 Editor's Note: As pointed out by a reader, Liam, the HP Elite Thunderbolt 3 Dock seems to have another variant with a Broadcom BCM57762-A1 which is natively supported in macOS. If you're able to verify the device before purchase, this may be another great option.
