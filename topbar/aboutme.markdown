@@ -4,13 +4,13 @@ title: About me
 permalink: /about-me/
 ---
 
-My name is Mykola Grymalyuk, or more commonly known as khronokernel. I do a lot of work around macOS and hackintoshes, including co-founding [Dortania](https://dortania.github.io/). This blog is less focussed on Hackintosh and Acidanthera news, for that I recommend checking out my other site [dortania.github.io](https://dortania.github.io)
+My name is Mykola Grymalyuk, or more commonly known as khronokernel. I do a lot of work around macOS and hackintoshes, including co-founding [Dortania](https://dortania.github.io/). This blog is less focussed on Hackintosh and Acidanthera news, for that I recommend checking out Dortania's dedicated site: [dortania.github.io](https://dortania.github.io)
 
 ### How did you get started with hackintoshes?
 
 To not bore you too much, I'll try to give a semi-simple timeline. More in-depth history can be found just by going through my Github and Reddit history ;p
 
-When I was 13, my mother was dating a guy at the time who was an Apple enthusiast and collector. He did laptop repairs before and had gifted me a 2011 13" MacBookAir(MacBookAir4,2) running Mavericks. That was my first experience with OS X.
+When I was 13, my mother was dating a guy at the time who was an Apple enthusiast and collector. He did laptop repairs before and had gifted me a 2011 13" MacBook Air (MacBookAir4,2) running Mavericks. That was my first experience with OS X.
 
 A few months later, I found an old Acer Aspire(Core2 Quad Q6600) sitting by the side of a dumpster with a monitor. We took it in and the machine still worked! My mom's boyfriend already had his own hackintosh in a PowerMac G5 case, so I decided I wanted to try that out as well on my new PC. I first started out with [tonymacx86's iBoot](https://www.tonymacx86.com/resources/iboot-3-3-0.38/) and running Mac OS X Snow Leopard, and was an unsurprising headache to setup with how sparse good documentation was.
 
