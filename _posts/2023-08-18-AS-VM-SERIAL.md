@@ -5,7 +5,7 @@ date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
 
-With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether custom serial numbers or DEP enrolment was possible on Apple Silicon VMs running macOS. Well today we'll go over what it takes to get DEP enrolment working, and what we're still missing from Apple.
+With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether the usage of custom serial numbers or the Device Enrolment Program (DEP) was possible on Apple Silicon VMs running macOS. Well today we'll go over the challenges of getting DEP working, and how iCloud and Custom Kernel Collections all face the same issue.
 
 --------------
 
@@ -44,9 +44,11 @@ Notes:
 
 ## Modding VirtualApple to gain more private functions
 
-Now that we have these fun new APIs to try, we need an app we can modify. For this, we'll be modding [Saagar Jha's VirtualApple project](https://github.com//VirtualApple). [DhinakG](https://github.com/dhinakg) actually beat me to the punch and modded VirtualApple with the above private APIs. So now all we have to do is test our VM!
+Now that we have these fun new APIs to try, we need an app we can modify. For this, we'll be modding [Saagar Jha's VirtualApple project](https://github.com//VirtualApple). With some help from [DhinakG](https://github.com/dhinakg), we're all set to test our VM!
 
-However, on Virtual Machine creation, we get an error when trying to start a Virtual Machine with a custom serial number:
+* [DhinakG's fork of VirtualApple](https://github.com/dhinakg/VirtualApple)
+
+However, on Virtual Machine creation, we get an unfortunate error when trying to start a Virtual Machine with a custom serial number:
 
 ![](/images/posts/2023-08-18-AS-VM-SERIAL/VirtualApple-Missing-Private-Entitlement.png)
 
@@ -97,14 +99,13 @@ codesign -f -s - --entitlements entitlements.plist VirtualApple.app
 
 ## Booting our Virtual Machine with custom serial numbers
 
-
 Finally, we can boot our virtual machine with our custom serial! After a brief install using an Apple Store serial number, we see some success! Our machine successfully appears as an Apple Demo Unit with the expected "Demo Registration: Please, Enter the demo mode activation code" message:
 
 * Apple Store Serial Number: `LR7KD0GXQJ`
 
 ![](../images/posts/2023-08-18-AS-VM-SERIAL/Apple-Store-Demo.png)
 
-Now for the real test, try a serial number enrolled in DEP.
+Now for the real challenge, testing a serial number enrolled in DEP.
 
 -----------
 
@@ -158,20 +159,19 @@ So how does the rest of the OS function when there's no SEP? Well Apple develope
 
 Another thing you may have noticed is that our Virtual Machines cannot sign into iCloud. Well the reason for this is also attestation related, since AuthKit.framework cannot setup a secure chain of trust. And guess what macOS 13.4 added? A new requirement for [developer accounts to access macOS Betas](https://www.macrumors.com/2023/04/11/macos-ventura-watchos-beta-installation-change/).
 
-And for those needing to boot development kernels or test kernel extensions are also out of luck, as there is no support for custom Kernel Collections including Auxiliary KCs meant for kexts in `/Library/Extensions`.
+And for those needing to boot development kernels or test kernel extensions are also out of luck, as it seems `bputil`/`kmutil` cannot communicate with the SEP to boot custom Kernel Collections including Auxiliary KCs meant for kexts in `/Library/Extensions`.
+
+* Steven Michaud has a thread in UTM's repo on their research into custom Kernel Collections:
+  * [Cannot load 3rd party kexts #4026](https://github.com/utmapp/UTM/issues/4026)
 
 ## Conclusion
 
-While unfortunately this research journey didn't result in any real successes for testing DEP workflows at work, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development workflows being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections.
+While unfortunately this research journey didn't result in any real successes for testing DEP workflows at work, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development tools being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections.
 
-* Some work-arounds for both are available however:
+* Some partial work-arounds available however:
   * [vma2pwn](https://github.com/nick-botticelli/vma2pwn)
   * [Enabling macOS 14 beta updates in a virtual machine](https://github.com/insidegui/VirtualBuddy/discussions/194#discussioncomment-6406771)
 
 Perhaps with macOS 15, we'll finally get `VirtualMac3,1` and proper SEP virtualization. Though this is just wishful thinking ;p
-
-
-
-
 
 
