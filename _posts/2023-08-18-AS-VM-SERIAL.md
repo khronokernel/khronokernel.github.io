@@ -5,7 +5,7 @@ date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
 
-With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether custom serial numbers or DEP enrolment was possible on Apple Silicon VMs running macOS. Well today we'll go over what it takes to get DEP enrolment working, and what Apple needs to do to help us.
+With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether custom serial numbers or DEP enrolment was possible on Apple Silicon VMs running macOS. Well today we'll go over what it takes to get DEP enrolment working, and what we're still missing from Apple.
 
 --------------
 
@@ -162,7 +162,7 @@ And for those needing to boot development kernels or test kernel extensions are 
 
 ## Conclusion
 
-While unfortunately this research journey didn't result in any real successes for testing DEP workflows at work, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development tools being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections. 
+While unfortunately this research journey didn't result in any real successes for testing DEP workflows at work, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development workflows being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections.
 
 * Some work-arounds for both are available however:
   * [vma2pwn](https://github.com/nick-botticelli/vma2pwn)
