@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Apple Silicon and Virtual Machines: Custom serials, DEP Enrolment, iCloud and the Secure Enclave"
+title: "Apple Silicon and Virtual Machines: Custom serials, DEP Enrolment and the Secure Enclave"
 date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
