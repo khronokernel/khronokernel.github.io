@@ -5,7 +5,7 @@ date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
 
-With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether the usage of custom serial numbers or the Device Enrolment Program (DEP) was possible on Apple Silicon VMs running macOS. Well today we'll go over the challenges of getting DEP working, and how iCloud and Custom Kernel Collections all face the same issue.
+With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether the usage of custom serial numbers or Automated Device Enrolment (ADE) through the Device Enrolment Program (DEP) was possible on Apple Silicon VMs running macOS. Well today we'll go over the challenges of getting DEP working, and how iCloud and Custom Kernel Collections all face the same issue.
 
 --------------
 
@@ -155,11 +155,43 @@ Thus a proper attestation cannot be performed, and so the UCRT request fails.
 
 So how does the rest of the OS function when there's no SEP? Well Apple developed `AppleVPBootPolicy.kext`, `AppleVPCredentialManager.kext` and `AppleVPKeyStore.kext` to handle the missing SEP and trick most of the OS into functioning correctly. Though as we can see, it's not perfect and fails to handle our Attestation request.
 
+If we reverse `/usr/lib/libbootpolicy.dylib` and examine `bootpolicy_get_oic`, we'll see a invocation to the SEP:
+```c
+int _bootpolicy_get_oic(int arg0, int arg1) {
+	...
+	result = __sep_command(0x26, ..., ..., ..., 0x1024);
+}
+```
+
+![](/images/posts/2023-08-18-AS-VM-SERIAL/Hopper-bootpolicy_get_oic.png)
+
+From this, `__sep_command` invokes `__sep_send`, which implements an IOConnectCall for communication with `com.apple.security.BootPolicy` in IOService
+* Normally `com.apple.security.BootPolicy` would be `BootPolicy.kext` on bare metal, however in VMs `AppleVPBootPolicy.kext` will be taking this role.
+
+Inside of `AppleVPBootPolicy.kext`, the array `_command_functions[]`'s entries corresponds to different functions. 
+```
+SEP command 38 = _command_get_oic()
+```
+
+However the contents of this function doesn't provide anything of use, instead always returning error code 3:
+```c
+signed __int64 _command_get_oic()
+{
+  __asm { HINT            #0x22 }
+  return 3LL;
+}
+```
+* [`HINT #0x22`](https://developer.arm.com/documentation/ddi0596/2020-12/Base-Instructions/HINT--Hint-instruction-) translates to `0010 001`, which represents [Profiling Synchronization Barrier (`PSB`)](https://developer.arm.com/documentation/dui0801/h/A64-General-Instructions/PSB).
+  * Thanks [Flagers](https://github.com/flagersgit) for the tip
+
+
+It seems this is a dead end for us, at least with macOS 14 Beta 5's stack.
+
 ## iCloud, OS Betas and Kernel Collections
 
-Another thing you may have noticed is that our Virtual Machines cannot sign into iCloud. Well the reason for this is also attestation related, since AuthKit.framework cannot setup a secure chain of trust. And guess what macOS 13.4 added? A new requirement for [developer accounts to access macOS Betas](https://www.macrumors.com/2023/04/11/macos-ventura-watchos-beta-installation-change/).
+Another thing you may have noticed is that Apple Silicon Virtual Machines cannot sign into iCloud. Well the reason for this is also attestation related, since AuthKit.framework cannot setup a secure chain of trust. And guess what macOS 13.4 added? A new requirement for [developer accounts to access macOS Betas](https://www.macrumors.com/2023/04/11/macos-ventura-watchos-beta-installation-change/).
 
-And for those needing to boot development kernels or test kernel extensions are also out of luck, as it seems `bputil`/`kmutil` cannot communicate with the SEP to boot custom Kernel Collections including Auxiliary KCs meant for kexts in `/Library/Extensions`.
+And for those needing to boot development kernels or test kernel extensions are also out of luck, as it seems `bputil`/`kmutil` cannot communicate with the SEP to configure boot for custom Kernel Collections including Auxiliary KCs meant for kexts in `/Library/Extensions`.
 
 * Steven Michaud has a thread in UTM's repo on their research into custom Kernel Collections:
   * [Cannot load 3rd party kexts #4026](https://github.com/utmapp/UTM/issues/4026)
