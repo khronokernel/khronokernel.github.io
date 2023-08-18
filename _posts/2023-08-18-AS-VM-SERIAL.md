@@ -99,7 +99,7 @@ codesign -f -s - --entitlements entitlements.plist VirtualApple.app
 
 ## Booting our Virtual Machine with custom serial numbers
 
-Finally, we can boot our virtual machine with our custom serial! After a brief install using an Apple Store serial number, we see some success! Our machine successfully appears as an Apple Demo Unit with the expected "Demo Registration: Please, Enter the demo mode activation code" message:
+Finally, we can boot our virtual machine with our custom serial! After a brief install using a Store Demo serial number we have access to, we see some success! Our machine successfully appears as an Demo Unit with the expected "Demo Registration: Please, Enter the demo mode activation code" message:
 
 ![](/images/posts/2023-08-18-AS-VM-SERIAL/Apple-Store-Demo.png)
 
