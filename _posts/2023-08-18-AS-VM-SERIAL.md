@@ -5,7 +5,7 @@ date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
 
-With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether the usage of custom serial numbers or Automated Device Enrolment (ADE) through the Device Enrolment Program (DEP) was possible on Apple Silicon VMs running macOS. Well today we'll go over the challenges of getting DEP working, and how iCloud and Custom Kernel Collections all face the same issue.
+With my [last post](https://khronokernel.github.io/macos/2023/08/08/AS-VM.html), I briefly mentioned at the end that my next challenge was to figure out whether the usage of custom serial numbers or [Automated Device Enrolment (ADE)](https://support.apple.com/en-us/HT204142) through the [Device Enrolment Program (DEP)](https://www.apple.com/mx/business-docs/DEP_Guide.pdf) was possible on Apple Silicon VMs running macOS. Well today we'll go over the challenges of getting DEP working, and how iCloud and Custom Kernel Collections all face the same issue.
 
 --------------
 
