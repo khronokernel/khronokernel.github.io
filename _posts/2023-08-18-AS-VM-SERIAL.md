@@ -185,7 +185,7 @@ signed __int64 _command_get_oic()
   * Thanks [Flagers](https://github.com/flagersgit) for the tip
 
 
-It seems this is a dead end for us, at least with macOS 14 Beta 5's stack.
+It seems that OIC handling was never implemented, most likely `#ifdef`'d out of public versions.
 
 ## iCloud, OS Betas and Kernel Collections
 
