@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Apple Silicon and Virtual Machines: Custom serials, DEP Enrolment and the Secure Enclave"
+title: "Apple Silicon and Virtual Machines: Custom Serials, DEP Enrolment and the Secure Enclave"
 date: 2023-08-18 7:00:00 -0600
 categories: macOS
 ---
@@ -103,7 +103,7 @@ Finally, we can boot our virtual machine with our custom serial! After a brief i
 
 * Apple Store Serial Number: `LR7KD0GXQJ`
 
-![](../images/posts/2023-08-18-AS-VM-SERIAL/Apple-Store-Demo.png)
+![](/images/posts/2023-08-18-AS-VM-SERIAL/Apple-Store-Demo.png)
 
 Now for the real challenge, testing a serial number enrolled in DEP.
 
