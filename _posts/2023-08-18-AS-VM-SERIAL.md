@@ -101,18 +101,13 @@ codesign -f -s - --entitlements entitlements.plist VirtualApple.app
 
 Finally, we can boot our virtual machine with our custom serial! After a brief install using an Apple Store serial number, we see some success! Our machine successfully appears as an Apple Demo Unit with the expected "Demo Registration: Please, Enter the demo mode activation code" message:
 
-* Apple Store Serial Number: `LR7KD0GXQJ`
-
 ![](/images/posts/2023-08-18-AS-VM-SERIAL/Apple-Store-Demo.png)
 
 Now for the real challenge, testing a serial number enrolled in DEP.
 
 -----------
 
-Now for this test I'll grab a 10 character serial number off eBay and see if we can enroll in that machine's MDM.
-
-* eBay MDM Locked Serial Number: `H49GVCG7G7`
-  * [eBay MDM Locked 2022 MacBook Air](https://www.ebay.ca/itm/285419925510)
+Now for this test I'll grab a 10 character serial number off a test machine and see if we can enroll in that machine's MDM.
 
 While install and initial setup went smoothly, we do hit a serious error:
 
@@ -198,7 +193,7 @@ And for those needing to boot development kernels or test kernel extensions are 
 
 ## Conclusion
 
-While unfortunately this research journey didn't result in any real successes for testing DEP workflows at work, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development tools being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections.
+While unfortunately this research journey didn't result in any real successes for testing DEP workflows, it was still really interesting seeing how the enrolment setup functions as well as work with the private APIs in Virtualization.framework. Though it is quite frustrating seeing many development tools being unavailable in Virtual Machines, especially proper OS betas and custom kernel collections.
 
 * Some partial work-arounds available however:
   * [vma2pwn](https://github.com/nick-botticelli/vma2pwn)
