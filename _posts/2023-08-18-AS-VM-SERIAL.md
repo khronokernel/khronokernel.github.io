@@ -140,7 +140,7 @@ A UCRT is a User Identity Certificate that's sent from Apple's servers after our
 * `/usr/libexec/teslad` requests the UCRT from Apple through `-[MobileActivationMacOSDaemon issueUCRT:withCompletionBlock:]_block_invoke`, the request will result in `Server error: 400 (bad request)` and thus the rest of the DEP chain will fail.
   * Reference: [LocalPolicy signing-key creation and management](https://support.apple.com/en-ca/guide/security/sec1f90fbad1/web)
 
-So why does our Virtual Machine fail to create a UCRT? Well unfortunately it seems to be caused by missing hardware, specifically a lack of a Secure Enclave in our virtual machine. During attestation, the Owner Identity Certificate (OIC) is requested from the Secure Enclave, however our Virtual Machine doesn't support this and errors:
+So why does our Virtual Machine fail to create a UCRT? Well unfortunately it seems to be caused by missing hardware, specifically the lack of a Secure Enclave in our virtual machine. During attestation, the Owner Identity Certificate (OIC) is requested from the Secure Enclave, however our Virtual Machine doesn't support this and errors:
 
 ```
 mobileactivationd: (libbootpolicy.dylib) [com.apple.BootPolicy:Library] BootPolicy: bootpolicy_get_oic: entry
@@ -155,7 +155,7 @@ Thus a proper attestation cannot be performed, and so the UCRT request fails.
 
 So how does the rest of the OS function when there's no SEP? Well Apple developed `AppleVPBootPolicy.kext`, `AppleVPCredentialManager.kext` and `AppleVPKeyStore.kext` to handle the missing SEP and trick most of the OS into functioning correctly. Though as we can see, it's not perfect and fails to handle our Attestation request.
 
-If we reverse `/usr/lib/libbootpolicy.dylib` and examine `bootpolicy_get_oic`, we'll see a invocation to the SEP:
+If we reverse `/usr/lib/libbootpolicy.dylib` and examine `bootpolicy_get_oic`, we'll see an invocation to the SEP:
 ```c
 int _bootpolicy_get_oic(int arg0, int arg1) {
 	...
