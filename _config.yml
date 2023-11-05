@@ -1,4 +1,6 @@
 title: "Mykola's blog"
+author:
+  name: Mykola Grymalyuk
 
 description: >
   Blog dedicated to my rambles, including reverse engineering macOS internals,
