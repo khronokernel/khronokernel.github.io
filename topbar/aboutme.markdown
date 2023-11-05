@@ -4,21 +4,19 @@ title: About me
 permalink: /about-me/
 ---
 
-My name is Mykola Grymalyuk, or more commonly known as khronokernel. I do a lot of work around macOS and hackintoshes, including co-founding [Dortania](https://dortania.github.io/). This blog is less focussed on Hackintosh and Acidanthera news, for that I recommend checking out Dortania's dedicated site: [dortania.github.io](https://dortania.github.io)
+Hello!
 
-### How did you get started with hackintoshes?
+My name is Mykola Grymalyuk, I am a Ukrainian software developer and enthusiast about macOS and tinkering things!
 
-To not bore you too much, I'll try to give a semi-simple timeline. More in-depth history can be found just by going through my Github and Reddit history ;p
+For those unfamiliar with me, some of the more recognizable projects I've worked on include [supporting 15+ year old Mac hardware running the latest macOS versions](https://github.com/dortania/OpenCore-Legacy-Patcher/), [running macOS on an iPad through a virtual machine](https://khronokernel.github.io/apple/silicon/2021/01/17/QEMU-AS.html) as well as [heavily documenting the Hackintosh process](https://dortania.github.io/OpenCore-Install-Guide/). I'm extremely passionate about reverse engineering macOS, developing patches for the community, and vulnerability research for macOS applications
 
-When I was 13, my mother was dating a guy at the time who was an Apple enthusiast and collector. He did laptop repairs before and had gifted me a 2011 13" MacBook Air (MacBookAir4,2) running Mavericks. That was my first experience with OS X.
+I've even had many news organizations write about some of the projects my colleagues and I have dedicated ourselves to:
 
-A few months later, I found an old Acer Aspire(Core2 Quad Q6600) sitting by the side of a dumpster with a monitor. We took it in and the machine still worked! My mom's boyfriend already had his own hackintosh in a PowerMac G5 case, so I decided I wanted to try that out as well on my new PC. I first started out with [tonymacx86's iBoot](https://www.tonymacx86.com/resources/iboot-3-3-0.38/) and running Mac OS X Snow Leopard, and was an unsurprising headache to setup with how sparse good documentation was.
+* [CNET: Apple's new Mac Mini is killing my Hackintosh](https://www.cnet.com/news/apple-new-m1-mac-mini-is-killing-my-hackintosh/)
+* [Ars Technica: Apple may be done with Intel Macs, but Hackintoshes can still use the newest CPUs](https://arstechnica.com/gadgets/2022/01/apple-may-be-done-with-intel-macs-but-hackintoshes-can-still-use-the-newest-cpus/)
+* [Ars Technica: Devs are making progress getting macOS Ventura to run on unsupported, decade-old Macs](https://arstechnica.com/gadgets/2022/08/running-macos-ventura-on-old-macs-isnt-easy-but-some-devs-are-making-progress/)
+* [MacRumors: run macOS on an iPad through a virtual Hackintosh](https://9to5mac.com/2021/01/21/ipad-running-macos-virtual-hackintosh/)
+* [Lifehacker: Install the Latest macOS on an Unsupported Mac](https://www.lifehacker.com.au/2021/10/how-to-install-the-latest-macos-on-an-unsupported-mac/)
+* [Intego: How to Install macOS Ventura on Unsupported Macs, for Security Improvements](https://www.intego.com/mac-security-blog/how-to-keep-older-macs-secure-a-geeky-approach/)
 
-From there, hackintoshing was mostly a casual hobby for a few years. In late 2018 however, I became much more active in the community. My first big contribution was the [Mojave GPU buyers Guide](https://www.reddit.com/r/hackintosh/comments/b91vf5/mojave_gpu_buyers_guide/) where I documented the numerous GPUs supported in Mojave at the time. This spiraled out more into the old [khronokernel.gitbook.io](https://khronokernel-1.gitbook.io/getting-started-with-opencore/) sites and eventually the Dortania organization we know today!
-
-### Where did the name Dortania and Khronokernel come from?
-
-
-* **Dortania:** DhinakG(the other co-founder) and I wanted a name that was unique, easy to find as well as have some relation to the Acidanthera flower.
-
-* **Khronokernel:** This one is a bit more complicated, as the name revolves around my chronic illness. I have Crohn's disease and back in 2019, I had the idea to make an app that would help track your stool output, Chrono Colon! The app never released officially, however, the name stuck with me so much that I wanted to re-incorporate it into my "professional" account. So I merged my love for messing with Apple's XNU kernel with the time theme from Chrono Colon to make Khronokernel!
+For more nitty gritty details, I post my research related to macOS reversing and patching here!

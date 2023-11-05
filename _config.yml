@@ -1,11 +1,26 @@
 title: "Mykola's blog"
+author:
+  name: Mykola Grymalyuk
+
+description: >
+  Blog dedicated to my rambles, including reverse engineering macOS internals,
+  OS modding and documenting my cursed work.
+  
+theme: minima
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: khronokernel
-theme: minima
+
 header_pages:
   - topbar/aboutme.markdown
   - topbar/portfolio.markdown
   - topbar/contact.markdown
+ 
 plugins:
   - jekyll-feed
+
+minima:
+  social_links:
+    - { platform: twitter,        user_url: "https://twitter.com/khronokernel" }
+	- { platform: linkedin,       user_url: "https://www.linkedin.com/in/mykola-grymalyuk-0411b3143/" }
+	- { platform: github,         user_url: "https://github.com/khronokernel" }
