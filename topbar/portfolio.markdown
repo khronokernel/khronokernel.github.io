@@ -6,15 +6,57 @@ permalink: /portfolio/
 
 Noteworthy projects of mine:
 
+* [Vulnerability Research](#vulnerability-research)
+* [Conference Talks](#conference-talks)
 * [OpenCore Legacy Patcher](#opencore-legacy-patcher)
 * [FeatureUnlock](#featureunlock)
 * [CryptexFixup](#cryptexfixup)
 * [Dortania Documentation](#dortania-documentation)
-* [Miscellaneous Design Work](#miscellaneous-design-work)
+
+### Vulnerability Research
+
+Sample of some security vulnerabilities found in macOS applications commonly deployed in enterprise environments:
+
+| Reference ID | Product | Affected Versions | Description |
+| --- | --- | --- | --- |
+| ________________________________________________ | ____________________________________________________________________________________ | ____________________________________________________________ | ____________________________________________________________ |
+| [CVE-2024-27822](https://support.apple.com/en-ca/HT214106){:target="_blank"} | macOS | 14.4.1 and older | Local Privilege Escalation |
+| [CVE-2024-34331](https://khronokernel.com/macos/2024/05/30/CVE-2024-34331.html){:target="_blank"} | Parallels Desktop | 19.3.0 and older | Local Privilege Escalation |
+| [CVE-2024-4395](https://www.cve.org/CVERecord?id=CVE-2024-4395){:target="_blank"} | Jamf Compliance Editor | 1.3.0 and older | Local Privilege Escalation |
+| [CVE-2024-38811](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/24939){:target="_blank"} | VMware Fusion | v13.5 and older | Arbitrary Code Execution |
+| [CVE-2024-25545](https://www.cve.org/CVERecord?id=CVE-2024-25545){:target="_blank"} | Weave Desktop | Unresolved | Arbitrary Code Execution |
+| [Synology-SA-24:05](https://www.synology.com/en-us/security/advisory/Synology_SA_24_05){:target="_blank"} | Synology Surveillance Station Client | 2.1.3-2474 and older | Arbitrary Code Execution |
+| [CVE-2024-23755](https://www.cve.org/CVERecord?id=CVE-2024-23755){:target="_blank"} | ClickUp Desktop App | 3.3.76 and older | Arbitrary Code Execution |
+| [CVE-2023-50975](https://www.cve.org/CVERecord?id=CVE-2023-50975){:target="_blank"} | TD Advanced Dashboard | 3.0.3 and older | Arbitrary Code Execution |
+| [CVE-2023-7245](https://www.cve.org/CVERecord?id=CVE-2023-7245){:target="_blank"} | OpenVPN | 3.4.7 and older | Arbitrary Code Execution |
+| [CVE-2023-50975](https://gist.github.com/khronokernel/2598c067d0f49b0f0a4c8b01cf129d34){:target="_blank"} | TD Advanced Dashboard | 3.0.3 and older | Arbitrary Code Execution |
+| [CVE-2023-44077](https://www.cve.org/CVERecord?id=CVE-2023-44077){:target="_blank"} | ShareBrowser XPC Services | 6.1.5.27 and older | Local Privilege Escalation |
+
+
+### Conference Talks
+
+#### [Apple’s (not so) Rapid Security Response](https://objectivebythesea.org/v7/index.html)
+##### Objective by the Sea v7.0, December 2024
+
+A look into Apple’s Rapid Security Response system, including the precursor, implementation
+details, challenges and where Apple’s been secretly deploying them to this day.
+
+#### [Electron Security: Making your Mac a worse place?](https://www.youtube.com/watch?v=e6u-qLruXjs)
+##### MacDevOpsYVR 2024, June 2024
+
+Discusses the dangers of misconfigured Electron fuses for TCC bypasses, and unveiling
+[Lectricus](https://github.com/ripeda/lectricus){:target="_blank"}, a utility for programmatically detecting these vulnerable applications.
+
+#### [Legacy Macs, Modern Solutions](https://www.youtube.com/watch?v=iTlQN_47Kcg)
+##### BSides Calgary 2023, November 2023
+
+Deep dive into macOS’ tier 2 citizenship, and how [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher){:target="_blank"} uses this to
+restore support for legacy machines allowing new features and security updates.
+
 
 ### [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher)
 
-Project dedicated to keeping old, unsupported Macs out of the land fill and running the latest versions of macOS! Project relies on many components, including [OpenCorekg's](https://github.com/acidanthera/OpenCorePkg) sophisticated injection system, [Lilu's](https://github.com/acidanthera/Lilu) kernel hooking and our own Python-based root volume patcher to restore hardware support including legacy Metal and OpenGL graphics rendering.
+Project dedicated to keeping old, unsupported Macs out of the land fill and running the latest versions of macOS! Project relies on many components, including [OpenCorePkg's](https://github.com/acidanthera/OpenCorePkg) sophisticated injection system, [Lilu's](https://github.com/acidanthera/Lilu) kernel hooking and our own Python-based root volume patcher to restore hardware support including legacy Metal and OpenGL graphics rendering.
 
 OpenCore Legacy Patcher is maintained by a small group of enthusiasts, and the work is no small task. We've reversed engineered many closed source binaries and frameworks, documented many unknown aspects of the operating system and develop patches and utilities to help get these older systems booted.
 
@@ -44,35 +86,3 @@ An organization dedicated to documenting the many aspects of macOS booting on PC
 Other guides are listed here:
 
 * [Dortania's Getting Started](https://dortania.github.io/getting-started/)
-
-
-
-### Miscellaneous Design Work
-
-While the majority of my work is on documentation with Dortania and Acidanthera, I do also work on design projects including website assets and app icons.
-
-* [ProperTree](#propertree)
-* [MaciASL](#maciasl)
-* [Dortania Assets](#dortania-assets)
-
-#### ProperTree
-
-* [Repo](https://github.com/CorpNewt/ProperTree)
-
-A multiplatform plist editor written in python, I designed the icon with the idea of how plist files have ever-expanding branches of new entries and dictionaries. I additionally refreshed the icon's design with Big Sur's release.
-
-![](../images/topbar/design/ProperTree-Icon.png)
-
-#### MaciASL
-
-* [Repo](https://github.com/acidanthera/MaciASL)
-
-A simple yet useful ACPI editor for macOS, the original icon dated back to 2013. I wanted to update the design to be more Big Sur fitting, but keeping the original charm of the old icon.
-
-![](../images/topbar/design/MaciASL-Icon.png)
-
-#### Dortania Assets
-
-As I am the main author and maintainer of [Dortania](https://dortania.github.io/), I also work a lot with the site's design and icons. Here are just a few of the icons I've designed for the organization:
-
-![](../images/topbar/design/Dortania-Assets.png)
