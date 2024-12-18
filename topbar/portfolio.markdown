@@ -35,7 +35,7 @@ Sample of some security vulnerabilities found in macOS applications commonly dep
 
 ### Conference Talks
 
-#### [Apple’s (not so) Rapid Security Response](https://objectivebythesea.org/v7/index.html)
+#### [Apple’s (not so) Rapid Security Response](https://www.youtube.com/watch?v=Fz6QtdjhtB8)
 ##### Objective by the Sea v7.0, December 2024
 
 A look into Apple’s Rapid Security Response system, including the precursor, implementation
