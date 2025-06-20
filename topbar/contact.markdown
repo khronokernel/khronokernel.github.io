@@ -4,9 +4,9 @@ title: Contact
 permalink: /contact/
 ---
 
-For those wishing to reach out, you can find my contacts below. However please keep project issues to their dedicated repos, my email is not a support form (ex. issues with projects such as OpenCore Legacy Patcher will be ignored)
+For those wishing to reach out, you can find my contacts below. Note that I can no longer discuss any topics related to OpenCore Legacy Patcher, Apple internals research, security vulnerabilities, or related.
 
 * Email: khronokernel (at) icloud.com
-* Linkedin: [Mykola Grymalyuk](https://www.linkedin.com/in/mykola-grymalyuk-0411b3143/)
-* Github: [@khronokernel](https://github.com/khronokernel)
-* Twitter: [@khronokernel](https://twitter.com/khronokernel)
+* Linkedin: [Mykola Grymalyuk](https://www.linkedin.com/in/mykola-grymalyuk/){:target="_blank"}
+* Github: [@khronokernel](https://github.com/khronokernel){:target="_blank"}
+* Twitter: [@khronokernel](https://twitter.com/khronokernel){:target="_blank"}

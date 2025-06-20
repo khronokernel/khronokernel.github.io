@@ -35,6 +35,12 @@ Sample of some security vulnerabilities found in macOS applications commonly dep
 
 ### Conference Talks
 
+
+#### [MDM Hygiene – How safe is your Mac fleet?](https://mdoyvr.com/speakers-2025/)
+##### MacDevOpsYVR 2025, June 2025
+
+Discusses some of the common security pitfalls MacAdmins might fall into and delve into the enrollment process of some popular MDMs. Finally showing off a enrollment query utility to highlight flaws in different MDMs' enrollment process.
+
 #### [Apple’s (not so) Rapid Security Response](https://www.youtube.com/watch?v=Fz6QtdjhtB8)
 ##### Objective by the Sea v7.0, December 2024
 
